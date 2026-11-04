@@ -1,5 +1,3 @@
-package onionet.network.test;
-
 import java.net.Socket;
 import java.io.IOException;
 import java.util.Scanner;
@@ -9,7 +7,7 @@ import java.io.InputStream;
 public class OnionClientTest {
     public static void main(String[] args) {
 
-        Scanner testScanner = new Scanner(System.in);
+        Scanner testScanner = new Scanner(System.in); // So you can make choices
 
         try {
             System.out.println("Please enter an IPV4 Address: ");
@@ -20,7 +18,7 @@ public class OnionClientTest {
 
             Socket socket = new Socket(ipChoice, portChoice);
 
-            System.out.println("Successfully connected to " + ipChoice + ":" + portChoice);
+            System.out.println("Successfully connected to " + ipChoice + ":" + portChoice); // Connection message
             System.out.println("==============================================");
 
             testScanner.nextLine();
@@ -28,7 +26,7 @@ public class OnionClientTest {
             System.out.println("Do you want to send a message to the server? (y/n)");
             String messageChoice = testScanner.nextLine();
 
-            if (messageChoice.equalsIgnoreCase("y")) {
+            if (messageChoice.equalsIgnoreCase("y")) { // you can send a message to server it self 
                 System.out.println("Enter your message for the admin");
                 String actualMessage = testScanner.nextLine();
 
@@ -64,7 +62,7 @@ public class OnionClientTest {
 
         }
 
-        testScanner.close();
+        testScanner.close(); // Closes the scanner
 
     }
 
