@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.io.OutputStream;
 import java.io.InputStream;
 
-public class OnionClientTest {
+public class ClientTest {
     public static void main(String[] args) {
 
         Scanner testScanner = new Scanner(System.in); // So you can make choices
