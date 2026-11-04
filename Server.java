@@ -1,5 +1,3 @@
-package onionet.network.test;
-
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.io.IOException;
@@ -10,7 +8,7 @@ public class OnionServer {
     public static void main(String[] args) {
 
         try {
-            ServerSocket serverSocket = new ServerSocket(5000);
+            ServerSocket serverSocket = new ServerSocket(5000); // Opens up port 5000, you may change this to whatever port you want
             System.out.println("Server is waiting for a client to connect...");
 
             Socket socket = serverSocket.accept();
@@ -21,11 +19,11 @@ public class OnionServer {
             int bytesRead = input.read(buffer);
 
             String message = new String(buffer, 0, bytesRead, "UTF-8");
-            System.out.println("Client says: " + message);
+            System.out.println("Client says: " + message); // This displays the clients message
 
-            OutputStream output = socket.getOutputStream();
+            OutputStream output = socket.getOutputStream(); // Sends a reply back to the client
 
-            String reply = "OnionServer: Message was received successfully";
+            String reply = "OnionServer: Message was received successfully"; // The reply
 
             output.write(reply.getBytes("UTF-8"));
             output.flush();
@@ -35,6 +33,7 @@ public class OnionServer {
 
         } catch (IOException e) {
             System.out.println("Could not connect to server");
+            // Ends gracefully
 
         }
 
